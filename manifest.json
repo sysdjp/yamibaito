@@ -1,0 +1,16 @@
+{
+  "formatVersion": 1,
+  "minAppVersion": "1.0",
+  "scenarios": [
+    {
+      "id": "ukeko",
+      "file": "ukeko.json",
+      "version": 1
+    },
+    {
+      "id": "kozaRental",
+      "file": "koza_rental.json",
+      "version": 1
+    }
+  ]
+}
