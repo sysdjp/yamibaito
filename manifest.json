@@ -11,6 +11,11 @@
       "id": "kozaRental",
       "file": "koza_rental.json",
       "version": 1
+    },
+    {
+      "id": "tataki",
+      "file": "tataki.json",
+      "version": 2
     }
   ]
 }
