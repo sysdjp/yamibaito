@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>闇バイトの誘い - サポート</title>
+  <meta name="description" content="闇バイトの手口を選択肢で体験する啓発ノベルゲーム「闇バイトの誘い」のサポートページです。">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+      background: #0d0f1e;
+      color: #e6e8f2;
+      line-height: 1.8;
+    }
+    header {
+      background: linear-gradient(180deg, #12142e, #5a0f1a);
+      padding: 48px 20px 40px;
+      text-align: center;
+      border-bottom: 3px solid #e7544d;
+    }
+    header .catch { color: #c9cbe0; font-size: 0.95em; margin-bottom: 4px; }
+    header h1 {
+      font-size: 2.3em;
+      color: #ffffff;
+      font-family: 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+      text-shadow: 0 0 14px rgba(231, 84, 77, 0.7);
+      margin-bottom: 8px;
+    }
+    header p { color: #d8d9e8; }
+    nav {
+      background: #15182e;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #2c3050;
+    }
+    nav a {
+      color: #ffb3ae;
+      text-decoration: none;
+      padding: 14px 22px;
+      font-size: 0.95em;
+    }
+    nav a:hover { background: #20243f; }
+    .container { max-width: 800px; margin: 0 auto; padding: 40px 16px; }
+    section { margin-bottom: 52px; }
+    h2 {
+      font-size: 1.45em;
+      color: #ffffff;
+      border-left: 5px solid #e7544d;
+      padding-left: 14px;
+      margin-bottom: 20px;
+    }
+    h3 { font-size: 1.1em; color: #ffb3ae; margin: 18px 0 6px; }
+    p { margin-bottom: 12px; color: #d0d2e2; }
+    ul { margin: 0 0 12px 1.4em; color: #d0d2e2; }
+    li { margin-bottom: 6px; }
+    .card {
+      background: #161a33;
+      border: 1px solid #2c3050;
+      border-radius: 14px;
+      padding: 22px;
+      margin-bottom: 18px;
+    }
+    .step { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 16px; }
+    .step-num {
+      background: #e7544d;
+      color: #fff;
+      font-weight: bold;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-body strong { color: #ffffff; }
+    .scenario-title { color: #ffffff; font-weight: bold; font-size: 1.1em; margin-bottom: 6px; }
+    .tag {
+      display: inline-block;
+      font-size: 0.75em;
+      font-weight: bold;
+      padding: 2px 10px;
+      border-radius: 999px;
+      margin-right: 6px;
+    }
+    .tag-good { background: rgba(89, 204, 140, 0.18); color: #59cc8c; }
+    .tag-caution { background: rgba(250, 191, 77, 0.18); color: #fabf4d; }
+    .tag-bad { background: rgba(235, 77, 77, 0.18); color: #eb4d4d; }
+    .consult {
+      background: #12233f;
+      border: 2px solid #4f8fd6;
+      border-radius: 14px;
+      padding: 22px;
+    }
+    .consult h3 { color: #8cc8ff; margin-top: 0; }
+    .tel-row { display: flex; align-items: center; gap: 14px; margin: 12px 0; flex-wrap: wrap; }
+    .tel-num { font-size: 1.6em; font-weight: bold; color: #ffffff; min-width: 90px; }
+    .fee { font-size: 0.78em; font-weight: bold; padding: 2px 10px; border-radius: 999px; }
+    .fee-free { background: rgba(89, 204, 140, 0.18); color: #59cc8c; }
+    .fee-paid { background: rgba(255, 255, 255, 0.12); color: #c9cbe0; }
+    .faq-item {
+      background: #161a33;
+      border: 1px solid #2c3050;
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 14px;
+    }
+    .faq-q { color: #ffffff; font-weight: bold; margin-bottom: 6px; }
+    .faq-q::before { content: "Q. "; color: #e7544d; }
+    .faq-a { color: #d0d2e2; }
+    .faq-a::before { content: "A. "; color: #59cc8c; font-weight: bold; }
+    .contact-box {
+      background: #161a33;
+      border: 2px solid #e7544d;
+      border-radius: 14px;
+      padding: 28px 20px;
+      text-align: center;
+    }
+    .contact-box a { color: #ffb3ae; font-size: 1.15em; font-weight: bold; word-break: break-all; }
+    .note { font-size: 0.85em; color: #9a9cb8; }
+    footer {
+      background: #080914;
+      text-align: center;
+      padding: 24px;
+      color: #7a7c98;
+      font-size: 0.85em;
+      border-top: 1px solid #1d2038;
+    }
+    footer a { color: #ffb3ae; text-decoration: none; }
+    @media (max-width: 480px) {
+      header h1 { font-size: 1.8em; }
+      nav a { padding: 12px 14px; font-size: 0.9em; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="catch">その一通が、人生を変える</div>
+  <h1>闇バイトの誘い</h1>
+  <p>闇バイトの手口を選択肢で体験する、啓発ノベルゲーム</p>
+</header>
+
+<nav>
+  <a href="#about">このアプリについて</a>
+  <a href="#howto">遊び方</a>
+  <a href="#scenario">シナリオ</a>
+  <a href="#consult">相談窓口</a>
+  <a href="#faq">よくある質問</a>
+  <a href="#contact">お問い合わせ</a>
+  <a href="privacy.html">プライバシーポリシー</a>
+</nav>
+
+<div class="container">
+
+  <section id="about">
+    <h2>このアプリについて</h2>
+    <div class="card">
+      <p>「闇バイトの誘い」は、SNSなどで広がる「闇バイト」の勧誘を、ストーリーと選択肢で疑似体験できるノベルゲームです。</p>
+      <p>主人公の大学生・ユウトが「楽に稼げる」誘いに出会い、どこで違和感に気づき、どう断り、誰に相談すればよいのか。プレイを通して、闇バイトの危険なサインと正しい対処法を学べます。</p>
+      <p class="note">※ 本作はフィクションです。登場する人物・団体は実在のものとは関係ありません。</p>
+    </div>
+  </section>
+
+  <section id="howto">
+    <h2>遊び方</h2>
+    <div class="card">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body"><strong>シナリオを選ぶ</strong><br>タイトル画面から、遊びたいシナリオを選びます。</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body"><strong>画面をタップして読み進める</strong><br>文字が表示されている途中でタップすると、全文がすぐに表示されます。</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body"><strong>選択肢を選ぶ</strong><br>あなたの選択によって物語が分岐し、結末が変わります。</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body"><strong>エンディングで振り返る</strong><br>各エンディングでは「ここがポイント」として、学んでほしい内容と相談窓口を紹介します。到達したエンディングは「エンディング一覧」で見返せます。</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="scenario">
+    <h2>シナリオ</h2>
+    <div class="card">
+      <div class="scenario-title">シナリオ１　受け子</div>
+      <p>家賃に困ったユウトは、SNSで「荷物を運ぶだけで1日5万円」という投稿を見つけます。身分証を送った先に待っていたのは、特殊詐欺の「受け子」の仕事と脅しでした。</p>
+      <p><span class="tag tag-good">GOOD 4</span><span class="tag tag-caution">CAUTION 1</span><span class="tag tag-bad">BAD 1</span></p>
+    </div>
+    <div class="card">
+      <div class="scenario-title">シナリオ２　口座レンタル</div>
+      <p>旅行代を貯めたいユウトに届いた「口座を貸すだけで毎月1万円」の誘い。渡した口座は、やがて詐欺の振込先として使われることに――。</p>
+      <p><span class="tag tag-good">GOOD 2</span><span class="tag tag-caution">CAUTION 1</span><span class="tag tag-bad">BAD 1</span></p>
+    </div>
+  </section>
+
+  <section id="consult">
+    <h2>相談窓口</h2>
+    <div class="consult">
+      <h3>困ったら、ひとりで抱え込まずにすぐ相談</h3>
+      <div class="tel-row">
+        <span class="tel-num">#9110</span>
+        <span>警察相談専用電話（全国共通）</span>
+        <span class="fee fee-paid">通話料は利用者負担</span>
+      </div>
+      <div class="tel-row">
+        <span class="tel-num">110</span>
+        <span>危険が迫っているとき・事件のとき</span>
+        <span class="fee fee-free">通話料無料</span>
+      </div>
+      <p>一度応募してしまっても、脅されていても、警察はあなたと家族を守ります。犯罪を実行する前なら、まだ引き返せます。</p>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2>よくある質問</h2>
+    <div class="faq-item">
+      <div class="faq-q">料金はかかりますか？</div>
+      <div class="faq-a">無料でお遊びいただけます。アプリ内課金や広告はありません。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">相談窓口の「#9110」をタップしても電話がかかりません。</div>
+      <div class="faq-a">iOSの仕様により、「#」を含む番号をアプリから電話アプリに直接渡すことはできません。タップすると「#9110」がコピーされますので、電話アプリのキーパッドに貼り付けて発信してください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">ゲームを終了するにはどうすればいいですか？</div>
+      <div class="faq-a">画面の下端から上にスワイプしてホーム画面に戻ってください（ホームボタンのある機種はホームボタンを押してください）。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">到達したエンディングの記録を消したいです。</div>
+      <div class="faq-a">記録は端末内にのみ保存されています。アプリを削除して再インストールすると、記録がリセットされます。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">個人情報は収集されますか？</div>
+      <div class="faq-a">収集しません。到達したエンディングの記録は端末内にのみ保存され、外部に送信されることはありません。詳しくは<a href="privacy.html" style="color:#ffb3ae;">プライバシーポリシー</a>をご覧ください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">授業や研修で使ってもいいですか？</div>
+      <div class="faq-a">はい、学校の授業やご家庭での話し合い、研修などでぜひご活用ください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">対応している端末を教えてください。</div>
+      <div class="faq-a">iOS 17.0 以降の iPhone に対応しています。</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>お問い合わせ</h2>
+    <div class="contact-box">
+      <p>アプリに関するご質問・不具合のご報告は、下記メールアドレスまでお送りください。</p>
+      <p><a href="mailto:damed6830@gmail.com">damed6830@gmail.com</a></p>
+      <p class="note">ご利用の端末名・iOSのバージョン・発生した状況をお書き添えいただくと、スムーズに対応できます。<br>※ 闇バイトに関する具体的なご相談は、上記の警察相談窓口へお願いします。</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p><a href="privacy.html">プライバシーポリシー</a>　|　© 2026 闇バイトの誘い</p>
+</footer>
+
+</body>
+</html>
