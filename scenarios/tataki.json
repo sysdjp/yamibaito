@@ -1,0 +1,538 @@
+{
+  "formatVersion": 1,
+  "id": "tataki",
+  "title": "シナリオ３　たたきの実行役",
+  "startNode": "s3_prologue",
+  "speakers": {
+    "yuto": {
+      "name": "ユウト",
+      "character": "student",
+      "color": "#8CBFFF"
+    },
+    "kobayashi": {
+      "name": "コバヤシ",
+      "character": "recruiter",
+      "color": "#99E6B3"
+    },
+    "shiji": {
+      "name": "指示役",
+      "character": "boss",
+      "color": "#FF7366"
+    },
+    "accomplice": {
+      "name": "見知らぬ男",
+      "color": "#C8C8D0"
+    },
+    "police": {
+      "name": "警察官",
+      "color": "#F2D966"
+    }
+  },
+  "endings": [
+    {
+      "id": "s3Spotted",
+      "kind": "good",
+      "title": "高額の罠を見抜いた",
+      "summary": "「1日で最大100万円」という投稿に応じなかったユウト。高すぎる報酬の裏には、必ず危険が隠れている。",
+      "lessons": [
+        "「高額」「即日払い」「荷物の回収・運搬」は、強盗の実行役を集める募集によく使われる言葉",
+        "普通のアルバイトで、1日に数十万円もの報酬が出ることはない",
+        "怪しい投稿を見かけたら、SNSの通報機能で報告する"
+      ]
+    },
+    {
+      "id": "s3Refused",
+      "kind": "good",
+      "title": "中身を言えない仕事",
+      "summary": "仕事の内容を説明しない相手に、個人情報を渡さなかったユウト。答えられない仕事には、答えられない理由がある。",
+      "lessons": [
+        "仕事の内容を説明しない求人には応募しない",
+        "「現場で説明する」「来ればわかる」は危険信号",
+        "身分証や実家の住所は、知らない相手に絶対に送らない"
+      ]
+    },
+    {
+      "id": "s3Consulted",
+      "kind": "good",
+      "title": "家族を守る選択",
+      "summary": "脅されても指示に従わず、警察に相談したユウト。犯行に加わる前に、自分と家族を守ることができた。",
+      "lessons": [
+        "脅されていても、警察に相談すれば、あなたと家族を守ってくれる",
+        "迷ったら警察相談専用電話「#9110」、危険が迫ったら「110」",
+        "犯罪を実行する前なら、まだ引き返せる"
+      ]
+    },
+    {
+      "id": "s3Escaped",
+      "kind": "good",
+      "title": "ぎりぎりの通報",
+      "summary": "犯行の直前、その場を離れて110番通報したユウト。その一本の電話が、ひとつの家族を守った。",
+      "lessons": [
+        "犯行の直前でも、その場を離れて110番すれば引き返せる",
+        "通報が、被害を未然に防ぐことにつながる",
+        "指示役の「誰も傷つかない」「留守の家だから安全」は、うそ"
+      ]
+    },
+    {
+      "id": "s3Arrested",
+      "kind": "bad",
+      "title": "取り返しのつかない夜",
+      "summary": "強盗の実行役として逮捕されたユウト。住人はけがを負い、指示役とは二度と連絡がつかなかった。待っているのは、法律に定められた重い刑罰だ。",
+      "lessons": [
+        "**強盗は「5年以上の拘禁刑」**。人にけがをさせれば強盗致傷となり、**「無期または6年以上の拘禁刑」**",
+        "被害者が亡くなれば、強盗致死・強盗殺人となり、**「無期拘禁刑または死刑」**",
+        "見張りや運転だけでも、**「共謀共同正犯」として、押し入った実行役と同じ罪・同じ法定刑**で裁かれる",
+        "これらは脅しではなく、**刑法に定められた法定刑そのもの**。被害者の人生も、自分の人生も取り返しがつかない"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "s3_prologue",
+      "chapter": "第1章　高額案件",
+      "background": "room",
+      "stage": [],
+      "phoneTitle": "タイムライン",
+      "lines": [
+        {
+          "type": "narrate",
+          "text": "大学3年の春。ユウトはオンラインゲームの課金がかさみ、カードの支払いに追われていた。"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "来月の引き落とし、30万円…。どうやって払えばいいんだ。",
+          "stage": [
+            "student"
+          ]
+        },
+        {
+          "type": "narrate",
+          "text": "夜中、SNSを眺めていると、ある投稿が目に飛び込んできた。"
+        },
+        {
+          "type": "post",
+          "text": "【高額案件💰】1日で最大100万円！\n荷物の回収・運搬のお仕事🚗\n即日払い・経験不問・身バレなし\n本気の方だけDMください🔥"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "1日で100万…？ これなら一気に返せる…。"
+        }
+      ],
+      "choices": [
+        {
+          "text": "DMを送ってみる",
+          "target": "s3_dm"
+        },
+        {
+          "text": "さすがに高すぎる。やめておこう",
+          "target": "s3_refuse_early"
+        }
+      ]
+    },
+    {
+      "id": "s3_refuse_early",
+      "chapter": "第1章　高額案件",
+      "background": "room",
+      "stage": [
+        "student"
+      ],
+      "lines": [
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "…待てよ。1日で100万円もらえる「回収・運搬」って、何を運ぶんだ？"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "まともな仕事なら、こんな金額になるはずがない。"
+        },
+        {
+          "type": "narrate",
+          "text": "ユウトは投稿を通報し、カード会社に支払いの相談をすることにした。"
+        }
+      ],
+      "ending": "s3Spotted"
+    },
+    {
+      "id": "s3_dm",
+      "chapter": "第2章　面接",
+      "background": "phone",
+      "stage": [],
+      "phoneTitle": "DM：コバヤシ＠高額案件",
+      "lines": [
+        {
+          "type": "dmOut",
+          "speaker": "yuto",
+          "text": "投稿を見ました。どんな仕事ですか？"
+        },
+        {
+          "type": "dmIn",
+          "speaker": "kobayashi",
+          "text": "ご連絡ありがとうございます！担当のコバヤシです😊 荷物の回収と運搬のお仕事です"
+        },
+        {
+          "type": "dmIn",
+          "speaker": "kobayashi",
+          "text": "まずは本人確認のため、免許証か学生証を顔の横に持った写真と、ご実家の住所を送ってください。その後、専用アプリでご案内します🙏"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "回収と運搬…。何を、どこに運ぶんだろう。"
+        }
+      ],
+      "choices": [
+        {
+          "text": "言われた通りに送る",
+          "target": "s3_send"
+        },
+        {
+          "text": "先に仕事の内容を詳しく聞く",
+          "target": "s3_ask"
+        }
+      ]
+    },
+    {
+      "id": "s3_ask",
+      "chapter": "第2章　面接",
+      "background": "phone",
+      "stage": [],
+      "phoneTitle": "DM：コバヤシ＠高額案件",
+      "lines": [
+        {
+          "type": "dmOut",
+          "speaker": "yuto",
+          "text": "送る前に、何を回収してどこに運ぶのか教えてもらえますか？"
+        },
+        {
+          "type": "dmIn",
+          "speaker": "kobayashi",
+          "text": "詳しくは現場で説明します！ 来てもらえればすぐわかりますよ👍"
+        },
+        {
+          "type": "dmIn",
+          "speaker": "kobayashi",
+          "text": "今夜の案件、枠があと1つなんです。早く決めてもらえますか？"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "（仕事の内容は言えないのに、個人情報だけは今すぐ欲しい…？）"
+        }
+      ],
+      "choices": [
+        {
+          "text": "やっぱりやめて、ブロックする",
+          "target": "s3_quit"
+        },
+        {
+          "text": "…お金のためだ。送ろう",
+          "target": "s3_send"
+        }
+      ]
+    },
+    {
+      "id": "s3_quit",
+      "chapter": "第2章　面接",
+      "background": "room",
+      "stage": [
+        "student"
+      ],
+      "lines": [
+        {
+          "type": "narrate",
+          "text": "ユウトは「お断りします」とだけ送り、アカウントをブロックした。"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "内容を言えない仕事なんて、まともなはずがない。"
+        },
+        {
+          "type": "narrate",
+          "text": "数週間後。ニュースで、同じような投稿で集められた若者たちが強盗事件で逮捕されたと報じられた。"
+        }
+      ],
+      "ending": "s3Refused"
+    },
+    {
+      "id": "s3_send",
+      "chapter": "第2章　面接",
+      "background": "phone",
+      "stage": [],
+      "phoneTitle": "DM：コバヤシ＠高額案件",
+      "lines": [
+        {
+          "type": "narrate",
+          "text": "ユウトは学生証の写真と、実家の住所を送信した。"
+        },
+        {
+          "type": "dmIn",
+          "speaker": "kobayashi",
+          "text": "確認できました！ ここからは担当が変わります。メッセージが消えるアプリを入れて、連絡を待ってください"
+        },
+        {
+          "type": "narrate",
+          "text": "アプリを入れると、すぐに知らない相手から通話がかかってきた。"
+        }
+      ],
+      "next": "s3_briefing"
+    },
+    {
+      "id": "s3_briefing",
+      "chapter": "第3章　仕事の正体",
+      "background": "darkRoom",
+      "stage": [
+        "boss"
+      ],
+      "lines": [
+        {
+          "type": "say",
+          "speaker": "shiji",
+          "text": "お前が新しいやつか。仕事を説明する。"
+        },
+        {
+          "type": "say",
+          "speaker": "shiji",
+          "text": "ある家に、現金がしまってある。住人が出かけている間に、仲間と一緒にそれを持ってくるだけだ。"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "え…。それって、強盗じゃ…。",
+          "stage": [
+            "student",
+            "boss"
+          ]
+        },
+        {
+          "type": "say",
+          "speaker": "shiji",
+          "text": "住人はいない。誰も傷つかない。お前は言われた通りに動けばいい。"
+        },
+        {
+          "type": "say",
+          "speaker": "shiji",
+          "text": "明日の夜、駅前で仲間と合流しろ。車はこっちで用意する。"
+        }
+      ],
+      "choices": [
+        {
+          "text": "「できません」と断る",
+          "target": "s3_threat"
+        },
+        {
+          "text": "…わかりました",
+          "target": "s3_meet"
+        }
+      ]
+    },
+    {
+      "id": "s3_threat",
+      "chapter": "第3章　仕事の正体",
+      "background": "darkRoom",
+      "stage": [
+        "boss"
+      ],
+      "lines": [
+        {
+          "type": "say",
+          "speaker": "shiji",
+          "text": "断る？ お前、自分の立場がわかってないな。"
+        },
+        {
+          "type": "say",
+          "speaker": "shiji",
+          "text": "学生証も、実家の住所ももらってる。お前が来ないなら、代わりに家族のところへ行くだけだ。"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "（家族まで…。どうしたらいいんだ…）",
+          "stage": [
+            "student",
+            "boss"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "text": "警察に相談する",
+          "target": "s3_police"
+        },
+        {
+          "text": "家族を守るために、言うことを聞く",
+          "target": "s3_meet"
+        }
+      ]
+    },
+    {
+      "id": "s3_police",
+      "chapter": "最終章　相談",
+      "background": "policeStation",
+      "stage": [
+        "student"
+      ],
+      "lines": [
+        {
+          "type": "narrate",
+          "text": "ユウトは震える手で警察相談専用電話「#9110」に電話し、警察署へ向かった。"
+        },
+        {
+          "type": "say",
+          "speaker": "police",
+          "text": "よく話してくれました。もう大丈夫ですよ。"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "実家の住所を知られていて…。家族に何かされるんじゃないかと…。"
+        },
+        {
+          "type": "say",
+          "speaker": "police",
+          "text": "ご家族のことも、地元の警察と連携して守ります。脅しは、あなたを従わせるための手口です。"
+        },
+        {
+          "type": "say",
+          "speaker": "police",
+          "text": "あなたが話してくれたおかげで、狙われていた家の人も守ることができます。"
+        },
+        {
+          "type": "narrate",
+          "text": "ユウトの情報をもとに警戒が強められ、計画は実行されることなく終わった。"
+        }
+      ],
+      "ending": "s3Consulted"
+    },
+    {
+      "id": "s3_meet",
+      "chapter": "第4章　実行の夜",
+      "background": "street",
+      "stage": [
+        "student"
+      ],
+      "lines": [
+        {
+          "type": "narrate",
+          "text": "翌日の夜。指定された場所には、見知らぬ男が2人、車の中で待っていた。"
+        },
+        {
+          "type": "say",
+          "speaker": "accomplice",
+          "text": "お前が3人目か。早く乗れ。"
+        },
+        {
+          "type": "say",
+          "speaker": "accomplice",
+          "text": "そういえば、指示役から連絡があった。今夜は住人が家にいるらしい。"
+        },
+        {
+          "type": "say",
+          "speaker": "accomplice",
+          "text": "騒がれたら、黙らせればいい。"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "（話が違う…！ 誰も傷つかないって言ってたのに…）"
+        }
+      ],
+      "choices": [
+        {
+          "text": "「トイレに行く」と言ってその場を離れ、110番する",
+          "target": "s3_escape"
+        },
+        {
+          "text": "怖くて逆らえず、車に乗る",
+          "target": "s3_crime"
+        }
+      ]
+    },
+    {
+      "id": "s3_escape",
+      "chapter": "最終章　通報",
+      "background": "policeStation",
+      "stage": [
+        "student"
+      ],
+      "lines": [
+        {
+          "type": "narrate",
+          "text": "ユウトはコンビニに駆け込み、震える声で110番通報した。"
+        },
+        {
+          "type": "say",
+          "speaker": "police",
+          "text": "通報ありがとうございます。あなたは今、安全な場所にいますか？"
+        },
+        {
+          "type": "narrate",
+          "text": "警察はすぐに動き、狙われていた家の周辺で、車の男たちを確保した。"
+        },
+        {
+          "type": "say",
+          "speaker": "police",
+          "text": "犯行の直前で、よく思いとどまってくれましたね。あなたの通報が、住人の命を守りました。"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "…あのまま車に乗っていたらと思うと、怖くて仕方ありません。"
+        }
+      ],
+      "ending": "s3Escaped"
+    },
+    {
+      "id": "s3_crime",
+      "chapter": "最終章　代償",
+      "background": "darkRoom",
+      "stage": [
+        "student"
+      ],
+      "lines": [
+        {
+          "type": "narrate",
+          "text": "その夜、ユウトは男たちとともに、ある家に押し入った。"
+        },
+        {
+          "type": "narrate",
+          "text": "住人の高齢の男性ともみ合いになり、仲間の一人が男性を突き飛ばした。男性は大けがを負った。"
+        },
+        {
+          "type": "narrate",
+          "text": "数日後。防犯カメラの映像から身元が特定され、ユウトは逮捕された。"
+        },
+        {
+          "type": "say",
+          "speaker": "police",
+          "text": "強盗の法定刑は「5年以上の拘禁刑」。住人にけがをさせたので強盗致傷となり、「無期または6年以上の拘禁刑」です。"
+        },
+        {
+          "type": "say",
+          "speaker": "police",
+          "text": "見張りや運転だけだったとしても、計画に加わっていれば「共謀共同正犯」として、押し入った実行役と同じ強盗の罪になり、同じ法定刑で裁かれます。"
+        },
+        {
+          "type": "say",
+          "speaker": "police",
+          "text": "これは脅しではありません。刑法に定められた刑罰です。"
+        },
+        {
+          "type": "say",
+          "speaker": "police",
+          "text": "あなたに指示を出していた人物とは、もう連絡がつかないでしょう。捕まるのは、いつも実行した人間です。"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "…30万円を返したかっただけなのに。"
+        }
+      ],
+      "ending": "s3Arrested"
+    }
+  ]
+}

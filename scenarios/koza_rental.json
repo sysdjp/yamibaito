@@ -1,0 +1,496 @@
+{
+  "formatVersion": 1,
+  "id": "kozaRental",
+  "title": "シナリオ２　口座レンタル",
+  "startNode": "s2_prologue",
+  "speakers": {
+    "bankClerk": {
+      "name": "銀行員",
+      "color": "#BFCCE6"
+    },
+    "miyamoto": {
+      "name": "ミヤモト",
+      "color": "#99E6B3",
+      "character": "recruiter"
+    },
+    "police": {
+      "name": "警察官",
+      "color": "#F2D966"
+    },
+    "stranger": {
+      "name": "謎の男",
+      "color": "#FF7366",
+      "character": "boss"
+    },
+    "yuto": {
+      "name": "ユウト",
+      "color": "#8CBFFF",
+      "character": "student"
+    }
+  },
+  "endings": [
+    {
+      "id": "s2Spotted",
+      "kind": "good",
+      "title": "うまい話を疑った",
+      "summary": "「口座を貸すだけ」の誘いに乗らなかったユウト。口座は、他人に渡してはいけない大切なものだ。",
+      "lessons": [
+        "「口座買い取ります」「貸すだけで副業」は犯罪への誘い",
+        "口座の売買・譲渡・レンタルは法律で禁止されている",
+        "「リスクなし」「カンタン」とうたう副業ほど疑ってかかる"
+      ]
+    },
+    {
+      "id": "s2Refused",
+      "kind": "good",
+      "title": "口座を守った",
+      "summary": "しつこい誘いをきっぱり断り、自分の口座を守ったユウト。調べてみる、という一手間が自分を救った。",
+      "lessons": [
+        "キャッシュカード・暗証番号・ネットバンキングのIDは他人に教えない",
+        "「みんなやってる」「バレない」は典型的な誘い文句",
+        "迷ったら、まず調べる・家族や警察に相談する"
+      ]
+    },
+    {
+      "id": "s2Confessed",
+      "kind": "warning",
+      "title": "失ったもの",
+      "summary": "口座を渡してしまったが、警察に正直に話したユウト。口座は凍結されたが、捜査に協力することができた。",
+      "lessons": [
+        "渡した口座は、詐欺のお金の振込先として悪用される",
+        "口座を売ったり渡したりすると、1年以下の拘禁刑または100万円以下の罰金の対象（犯罪収益移転防止法）",
+        "気づいた時点で、すぐに警察や銀行に相談する"
+      ]
+    },
+    {
+      "id": "s2Arrested",
+      "kind": "bad",
+      "title": "名義の代償",
+      "summary": "黙っていることを選んだユウト。自分名義の口座が詐欺に使われた責任は、自分自身に返ってきた。",
+      "lessons": [
+        "口座を渡しただけでも処罰の対象になる",
+        "口座が凍結され、新しく口座を作るのも難しくなることがある",
+        "だまされた被害者から、損害賠償を求められることもある"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "s2_prologue",
+      "chapter": "第1章　楽な副業",
+      "background": "room",
+      "stage": [],
+      "phoneTitle": "タイムライン",
+      "lines": [
+        {
+          "type": "narrate",
+          "text": "大学2年の冬。ユウトは友達との卒業旅行の費用を貯めていた。"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "あと3万円…。バイトを増やす時間もないしなぁ。",
+          "stage": [
+            "student"
+          ]
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "そういえば、昔作ったまま使ってない銀行口座があったっけ。"
+        },
+        {
+          "type": "narrate",
+          "text": "SNSを眺めていると、こんな投稿が流れてきた。"
+        },
+        {
+          "type": "post",
+          "text": "【スキマ時間で副業💴】\n使っていない銀行口座、レンタルしませんか？\n口座を貸すだけで毎月1万円✨\n手続きカンタン・リスクなし！\n詳しくはDMで👍"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "使ってない口座を貸すだけで、毎月1万円…？"
+        }
+      ],
+      "choices": [
+        {
+          "text": "DMを送ってみる",
+          "target": "s2_dm"
+        },
+        {
+          "text": "口座を貸すなんて怪しい。やめておこう",
+          "target": "s2_refuse_early"
+        }
+      ]
+    },
+    {
+      "id": "s2_refuse_early",
+      "chapter": "第1章　楽な副業",
+      "background": "room",
+      "stage": [
+        "student"
+      ],
+      "lines": [
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "…待てよ。他人の口座を借りて、何に使うんだ？"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "自分の名義の口座を知らない人に渡すなんて、やっぱり怖いよな。"
+        },
+        {
+          "type": "narrate",
+          "text": "ユウトは投稿を通報し、短期のアルバイトを探すことにした。"
+        }
+      ],
+      "ending": "s2Spotted"
+    },
+    {
+      "id": "s2_dm",
+      "chapter": "第2章　レンタルの条件",
+      "background": "phone",
+      "stage": [],
+      "phoneTitle": "DM：ミヤモト＠副業サポート",
+      "lines": [
+        {
+          "type": "dmOut",
+          "speaker": "yuto",
+          "text": "口座を貸すだけで、本当にお金がもらえるんですか？"
+        },
+        {
+          "type": "dmIn",
+          "speaker": "miyamoto",
+          "text": "はい！使っていない口座を「レンタル」させてもらうだけ。毎月1万円お支払いします😊"
+        },
+        {
+          "type": "dmIn",
+          "speaker": "miyamoto",
+          "text": "キャッシュカードを郵送していただいて、暗証番号とネットバンキングのID・パスワードを教えてください📮"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "暗証番号まで…？ でも使ってない口座だし、別にいいのかな。"
+        }
+      ],
+      "choices": [
+        {
+          "text": "言われた通りに送る",
+          "target": "s2_send"
+        },
+        {
+          "text": "口座レンタルは違法でないか聞く",
+          "target": "s2_ask_legal"
+        },
+        {
+          "text": "口座を貸して問題ないか調べてみる",
+          "target": "s2_research"
+        }
+      ]
+    },
+    {
+      "id": "s2_ask_legal",
+      "chapter": "第2章　レンタルの条件",
+      "background": "phone",
+      "stage": [],
+      "phoneTitle": "DM：ミヤモト＠副業サポート",
+      "lines": [
+        {
+          "type": "dmOut",
+          "speaker": "yuto",
+          "text": "口座レンタルって、違法じゃないんですか？"
+        },
+        {
+          "type": "dmIn",
+          "speaker": "miyamoto",
+          "text": "口座売買は違法なんですけど、レンタルは合法で問題ないんですよ。日本に来たばかりの勉強とバイトを両立させようと頑張る外国人に口座を貸すだけなんです"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "人助けにもなるなら…。いや、でも本当に合法なのかな？"
+        }
+      ],
+      "choices": [
+        {
+          "text": "それなら大丈夫かと送る",
+          "target": "s2_send"
+        },
+        {
+          "text": "本当に合法か調べてみる",
+          "target": "s2_research"
+        }
+      ]
+    },
+    {
+      "id": "s2_research",
+      "chapter": "第2章　レンタルの条件",
+      "background": "room",
+      "stage": [
+        "student"
+      ],
+      "lines": [
+        {
+          "type": "narrate",
+          "text": "ユウトは「口座 貸す」で検索してみた。"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "…「口座の売買・譲渡は犯罪」？ 「貸すだけ」でもダメなのか。"
+        },
+        {
+          "type": "narrate",
+          "text": "通帳やキャッシュカードを他人に渡すことは、法律で禁止されている。だまし取ったお金の振込先として悪用されるからだ。"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "月1万円のために、詐欺の手伝いをするところだった…。"
+        }
+      ],
+      "next": "s2_push"
+    },
+    {
+      "id": "s2_push",
+      "chapter": "第2章　レンタルの条件",
+      "background": "phone",
+      "stage": [],
+      "phoneTitle": "DM：ミヤモト＠副業サポート",
+      "lines": [
+        {
+          "type": "dmIn",
+          "speaker": "miyamoto",
+          "text": "まだですか？ 今日送ってくれたら、初月分にプラスして3万円すぐ振り込みますよ"
+        },
+        {
+          "type": "dmIn",
+          "speaker": "miyamoto",
+          "text": "大丈夫、みんなやってます。バレませんって👍"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "（3万円あれば、旅行代が全部そろう…。でも…）"
+        }
+      ],
+      "choices": [
+        {
+          "text": "きっぱり断ってブロックする",
+          "target": "s2_refuse"
+        },
+        {
+          "text": "…やっぱり送る",
+          "target": "s2_send"
+        }
+      ]
+    },
+    {
+      "id": "s2_refuse",
+      "chapter": "第2章　レンタルの条件",
+      "background": "room",
+      "stage": [
+        "student"
+      ],
+      "lines": [
+        {
+          "type": "narrate",
+          "text": "ユウトは「お断りします」と送り、アカウントをブロックした。"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "口座は、自分の名前で作った大事なものだ。知らない人に渡しちゃいけない。"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "旅行代は、地道にバイトで貯めよう。"
+        }
+      ],
+      "ending": "s2Refused"
+    },
+    {
+      "id": "s2_send",
+      "chapter": "第2章　レンタルの条件",
+      "background": "phone",
+      "stage": [],
+      "phoneTitle": "DM：ミヤモト＠副業サポート",
+      "lines": [
+        {
+          "type": "narrate",
+          "text": "ユウトはキャッシュカードを封筒に入れて郵送し、暗証番号とネットバンキングのIDを送った。"
+        },
+        {
+          "type": "dmIn",
+          "speaker": "miyamoto",
+          "text": "受け取りました！ 今月分の1万円、振り込んでおきますね💴"
+        },
+        {
+          "type": "narrate",
+          "text": "数日後、本当に1万円が振り込まれた。"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "なんだ、本当にもらえた。楽勝じゃん。"
+        }
+      ],
+      "next": "s2_frozen"
+    },
+    {
+      "id": "s2_frozen",
+      "chapter": "第3章　口座凍結",
+      "background": "bank",
+      "stage": [
+        "student"
+      ],
+      "lines": [
+        {
+          "type": "narrate",
+          "text": "2週間後。ユウトのスマホに、銀行から電話がかかってきた。"
+        },
+        {
+          "type": "say",
+          "speaker": "bankClerk",
+          "text": "あなた名義の口座に、詐欺の被害金が振り込まれていることが確認されました。口座のお取引を停止しています。"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "さ、詐欺…!?"
+        },
+        {
+          "type": "narrate",
+          "text": "ユウトが渡した口座は、特殊詐欺でだまし取られたお金の「振込先」として使われていたのだ。"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "（あの口座が…。どうしよう…）"
+        }
+      ],
+      "choices": [
+        {
+          "text": "ミヤモトに連絡してみる",
+          "target": "s2_contact"
+        },
+        {
+          "text": "警察に相談する",
+          "target": "s2_police"
+        }
+      ]
+    },
+    {
+      "id": "s2_contact",
+      "chapter": "第3章　口座凍結",
+      "background": "darkRoom",
+      "stage": [],
+      "lines": [
+        {
+          "type": "narrate",
+          "text": "ミヤモトのアカウントは、すでに消えていた。代わりに、知らない番号から電話がかかってきた。"
+        },
+        {
+          "type": "say",
+          "speaker": "stranger",
+          "text": "警察に余計なこと言うなよ。",
+          "stage": [
+            "boss"
+          ]
+        },
+        {
+          "type": "say",
+          "speaker": "stranger",
+          "text": "口座を売ったのはお前だ。捕まるのはお前なんだぞ。"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "（確かに、渡したのは自分だ…。でも…）",
+          "stage": [
+            "student",
+            "boss"
+          ]
+        }
+      ],
+      "choices": [
+        {
+          "text": "それでも警察に相談する",
+          "target": "s2_police"
+        },
+        {
+          "text": "怖いので黙っておく",
+          "target": "s2_arrest"
+        }
+      ]
+    },
+    {
+      "id": "s2_police",
+      "chapter": "最終章　相談",
+      "background": "policeStation",
+      "stage": [
+        "student"
+      ],
+      "lines": [
+        {
+          "type": "narrate",
+          "text": "ユウトは警察署へ行き、口座を渡したいきさつをすべて話した。"
+        },
+        {
+          "type": "say",
+          "speaker": "police",
+          "text": "正直に話してくれてありがとう。あなたの口座は、詐欺の被害金を受け取るために使われていました。"
+        },
+        {
+          "type": "say",
+          "speaker": "police",
+          "text": "口座を他人に渡すことは、それ自体が犯罪です。ただ、自分から事情を話してくれたことは、とても大切なことですよ。"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "…自分の口座が、誰かをだますのに使われていたなんて。"
+        },
+        {
+          "type": "narrate",
+          "text": "口座は凍結されたまま。それでもユウトの話は、犯人グループを追う手がかりになった。"
+        }
+      ],
+      "ending": "s2Confessed"
+    },
+    {
+      "id": "s2_arrest",
+      "chapter": "最終章　代償",
+      "background": "room",
+      "stage": [
+        "student"
+      ],
+      "lines": [
+        {
+          "type": "narrate",
+          "text": "数か月後。ユウトのアパートを警察が訪ねてきた。"
+        },
+        {
+          "type": "say",
+          "speaker": "police",
+          "text": "あなた名義の口座が詐欺に使われていました。口座を他人に譲り渡した疑いで、お話を聞かせてください。"
+        },
+        {
+          "type": "say",
+          "speaker": "yuto",
+          "text": "…たった1万円のために…。"
+        },
+        {
+          "type": "narrate",
+          "text": "口座は凍結され、新しく口座を作ることも難しくなった。アルバイト代の受け取りにも困る日々が始まった。"
+        }
+      ],
+      "ending": "s2Arrested"
+    }
+  ]
+}
