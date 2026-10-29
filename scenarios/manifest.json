@@ -16,6 +16,12 @@
       "id": "tataki",
       "file": "tataki.json",
       "version": 4
+    },
+    {
+      "id": "hakobiya",
+      "file": "hakobiya.json",
+      "version": 1,
+      "minAppVersion": "1.2"
     }
   ]
 }

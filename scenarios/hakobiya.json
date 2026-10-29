@@ -1,0 +1,252 @@
+{
+  "formatVersion": 1,
+  "id": "hakobiya",
+  "title": "シナリオ４　運び屋",
+  "startNode": "s4_prologue",
+  "speakers": {
+    "yuto": { "name": "ユウト", "character": "student", "color": "#8CBFFF" },
+    "tanaka": { "name": "タナカ", "character": "recruiter", "color": "#99E6B3" },
+    "localMan": { "name": "現地の男", "character": "boss", "color": "#FF7366" },
+    "customs": { "name": "税関職員", "color": "#BFCCE6" },
+    "embassy": { "name": "大使館職員", "color": "#BFCCE6" },
+    "police": { "name": "警察官", "color": "#F2D966" }
+  },
+  "endings": [
+    {
+      "id": "s4Spotted",
+      "kind": "good",
+      "title": "タダより高いものはない",
+      "summary": "「海外旅行が無料で、報酬までもらえる」という誘いに乗らなかったユウト。うますぎる話には、必ず裏がある。",
+      "lessons": [
+        "「旅行無料＋高額報酬」「荷物を運ぶだけ」は、薬物の運び屋を集める典型的な誘い文句",
+        "他人から預かった荷物を、中身を確かめずに運ぶことは絶対にしない",
+        "海外には、薬物の密輸に死刑を定めている国もある"
+      ]
+    },
+    {
+      "id": "s4Refused",
+      "kind": "good",
+      "title": "開けてはいけない荷物",
+      "summary": "「中は開けるな」「税関ではうそを言え」という指示に、危険を感じて断ったユウト。その違和感が、自分を守った。",
+      "lessons": [
+        "「中を開けるな」「聞かれたらお土産と言え」と言われたら、違法な荷物だと考える",
+        "パスポートや実家の住所を、知らない相手に送らない",
+        "おかしいと感じたら、やり取りをやめてブロックする"
+      ]
+    },
+    {
+      "id": "s4Consulted",
+      "kind": "good",
+      "title": "旅先からのSOS",
+      "summary": "荷物の中身に気づき、日本大使館に助けを求めたユウト。運ぶ前に踏みとどまり、無事に帰国することができた。",
+      "lessons": [
+        "海外でトラブルに巻き込まれたら、現地の日本大使館・総領事館に相談できる",
+        "脅されていても、荷物を運ぶ前なら引き返せる",
+        "帰国後も警察に相談し、自分と家族の安全を守る"
+      ]
+    },
+    {
+      "id": "s4Confessed",
+      "kind": "warning",
+      "title": "正直に話した",
+      "summary": "税関で、自分から事情を打ち明けたユウト。罪に問われる可能性は残るが、うそを重ねずに済んだ。",
+      "lessons": [
+        "違法な荷物を運んでしまった時点で、罪に問われる可能性がある",
+        "自分から正直に話すことは大切だが、それで罪が消えるわけではない",
+        "いちばん大切なのは、最初からこうした仕事を引き受けないこと"
+      ]
+    },
+    {
+      "id": "s4Arrested",
+      "kind": "bad",
+      "title": "「知らなかった」は通らない",
+      "summary": "スーツケースに隠された覚醒剤とともに逮捕されたユウト。タナカとも現地の男とも、二度と連絡はつかなかった。",
+      "lessons": [
+        "**覚醒剤を営利目的で輸入すると「無期または3年以上の拘禁刑」**。さらに1000万円以下の罰金が科されることもある",
+        "「中身を知らなかった」と言っても、**高額な報酬や「開けるな」という指示から、違法な物だと分かっていたと判断されることが多い**",
+        "海外で捕まれば、**国によっては死刑**になることもある",
+        "指示役は捕まらず、捕まるのはいつも荷物を運んだ人"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "s4_prologue",
+      "chapter": "第1章　夢の海外旅行",
+      "background": "room",
+      "stage": [],
+      "phoneTitle": "タイムライン",
+      "lines": [
+        { "type": "narrate", "text": "大学3年の夏休み前。友達はみんな海外旅行の計画を立てていた。" },
+        { "type": "say", "speaker": "yuto", "text": "いいなぁ…。俺も行きたいけど、そんなお金ないし。", "stage": ["student"] },
+        { "type": "narrate", "text": "SNSを眺めていると、目を疑うような投稿が流れてきた。" },
+        { "type": "post", "text": "【旅行好き必見✈️】\n海外旅行が無料＋報酬30万円！\n現地で荷物を受け取って、日本に持ち帰るだけ🧳\n航空券・ホテル代はすべてこちらで負担します\n興味ある方はDMへ👍" },
+        { "type": "say", "speaker": "yuto", "text": "タダで海外に行けて、30万円ももらえる…？" }
+      ],
+      "choices": [
+        { "text": "DMを送ってみる", "target": "s4_dm" },
+        { "text": "うますぎる話だ。やめておこう", "target": "s4_refuse_early" }
+      ]
+    },
+    {
+      "id": "s4_refuse_early",
+      "chapter": "第1章　夢の海外旅行",
+      "background": "room",
+      "stage": ["student"],
+      "lines": [
+        { "type": "say", "speaker": "yuto", "text": "…待てよ。旅費を全部払ってまで運ばせたい荷物って、何なんだ？" },
+        { "type": "say", "speaker": "yuto", "text": "普通の荷物なら、国際便で送ればいいだけだよな。" },
+        { "type": "narrate", "text": "ユウトは投稿を通報し、夏休みは短期のアルバイトで旅費を貯めることにした。" }
+      ],
+      "ending": "s4Spotted"
+    },
+    {
+      "id": "s4_dm",
+      "chapter": "第2章　旅の準備",
+      "background": "phone",
+      "stage": [],
+      "phoneTitle": "DM：タナカ＠トラベルサポート",
+      "lines": [
+        { "type": "dmOut", "speaker": "yuto", "text": "投稿を見ました。本当に無料で海外に行けるんですか？" },
+        { "type": "dmIn", "speaker": "tanaka", "text": "はい！担当のタナカです😊 現地で取引先から荷物を受け取って、日本に持ち帰っていただくだけです" },
+        { "type": "dmIn", "speaker": "tanaka", "text": "航空券の手配に使うので、パスポートの写真と、ご実家の住所を送ってください✈️" },
+        { "type": "say", "speaker": "yuto", "text": "荷物って、何が入ってるんだろう。" }
+      ],
+      "choices": [
+        { "text": "言われた通りに送る", "target": "s4_send" },
+        { "text": "荷物の中身を聞いてみる", "target": "s4_ask" }
+      ]
+    },
+    {
+      "id": "s4_ask",
+      "chapter": "第2章　旅の準備",
+      "background": "phone",
+      "stage": [],
+      "phoneTitle": "DM：タナカ＠トラベルサポート",
+      "lines": [
+        { "type": "dmOut", "speaker": "yuto", "text": "荷物の中身は何ですか？" },
+        { "type": "dmIn", "speaker": "tanaka", "text": "ブランド品のサンプルです！ 税関で聞かれたら「友達へのお土産」と言えば大丈夫ですよ" },
+        { "type": "dmIn", "speaker": "tanaka", "text": "あ、中は絶対に開けないでくださいね。商品なので🙏" },
+        { "type": "say", "speaker": "yuto", "text": "（税関でうそを言え…？ 中は開けるな…？）" }
+      ],
+      "choices": [
+        { "text": "やっぱりやめて、ブロックする", "target": "s4_quit" },
+        { "text": "…タダで旅行できるなら、行こう", "target": "s4_send" }
+      ]
+    },
+    {
+      "id": "s4_quit",
+      "chapter": "第2章　旅の準備",
+      "background": "room",
+      "stage": ["student"],
+      "lines": [
+        { "type": "narrate", "text": "ユウトは「今回はやめておきます」と送り、アカウントをブロックした。" },
+        { "type": "say", "speaker": "yuto", "text": "開けちゃいけない荷物を、うそをついて持ち込む…。どう考えても普通じゃない。" },
+        { "type": "narrate", "text": "後日、同じような誘いで海外に渡った若者が、薬物の密輸で逮捕されたというニュースを目にした。" }
+      ],
+      "ending": "s4Refused"
+    },
+    {
+      "id": "s4_send",
+      "chapter": "第2章　旅の準備",
+      "background": "phone",
+      "stage": [],
+      "phoneTitle": "DM：タナカ＠トラベルサポート",
+      "lines": [
+        { "type": "narrate", "text": "ユウトはパスポートの写真と実家の住所を送った。数日後、本当に航空券が届いた。" },
+        { "type": "dmIn", "speaker": "tanaka", "text": "現地に着いたら、ホテルで担当者から荷物を受け取ってください。楽しい旅を！✈️" },
+        { "type": "say", "speaker": "yuto", "text": "本当にタダで行けるんだ…！" }
+      ],
+      "next": "s4_abroad"
+    },
+    {
+      "id": "s4_abroad",
+      "chapter": "第3章　預かった荷物",
+      "background": "street",
+      "stage": ["boss"],
+      "lines": [
+        { "type": "narrate", "text": "東南アジアのある国。帰国の前夜、ホテルに見知らぬ男がスーツケースを持って現れた。" },
+        { "type": "say", "speaker": "localMan", "text": "これを日本まで運べ。空港では堂々としていろ。" },
+        { "type": "say", "speaker": "localMan", "text": "中は見るな。余計なことをしたら、日本の家族がどうなるかわかってるな。" },
+        { "type": "say", "speaker": "yuto", "text": "（家族…？ それに、このスーツケース、空のはずなのにやけに重い…）", "stage": ["student", "boss"] }
+      ],
+      "choices": [
+        { "text": "男が帰った後、中を確かめる", "target": "s4_open" },
+        { "text": "言われた通り、何も見ずに持ち帰る", "target": "s4_customs" }
+      ]
+    },
+    {
+      "id": "s4_open",
+      "chapter": "第3章　預かった荷物",
+      "background": "darkRoom",
+      "stage": ["student"],
+      "lines": [
+        { "type": "narrate", "text": "ユウトは震える手でスーツケースを開けた。内張りの奥に、テープで固められた包みがいくつも隠されていた。" },
+        { "type": "say", "speaker": "yuto", "text": "これ…まさか、薬物…？" },
+        { "type": "say", "speaker": "yuto", "text": "（これを持って帰ったら、俺は密輸犯だ。でも、運ばなかったら家族が…）" }
+      ],
+      "choices": [
+        { "text": "日本大使館に助けを求める", "target": "s4_embassy" },
+        { "text": "怖いので、そのまま持ち帰る", "target": "s4_customs" }
+      ]
+    },
+    {
+      "id": "s4_embassy",
+      "chapter": "最終章　相談",
+      "background": "policeStation",
+      "stage": ["student"],
+      "lines": [
+        { "type": "narrate", "text": "翌朝、ユウトはスーツケースに手を付けず、現地の日本大使館に駆け込んだ。" },
+        { "type": "say", "speaker": "embassy", "text": "よく来てくださいました。現地の警察とも連絡を取りますので、まずは落ち着いて話を聞かせてください。" },
+        { "type": "say", "speaker": "yuto", "text": "実家の住所も知られていて…。家族に何かされるんじゃないかと…。" },
+        { "type": "say", "speaker": "embassy", "text": "ご家族のことは、日本の警察にも伝えて守ってもらいましょう。運ぶ前に相談してくれて、本当によかった。" },
+        { "type": "narrate", "text": "ユウトは大使館の助けを借りて、無事に日本へ帰国した。" }
+      ],
+      "ending": "s4Consulted"
+    },
+    {
+      "id": "s4_customs",
+      "chapter": "第4章　税関",
+      "background": "airport",
+      "stage": ["student"],
+      "lines": [
+        { "type": "narrate", "text": "日本の空港。ユウトは重いスーツケースを引いて、税関の列に並んだ。" },
+        { "type": "say", "speaker": "yuto", "text": "（心臓の音がうるさい…。このまま通れば、30万円…）" },
+        { "type": "narrate", "text": "自分の番が、少しずつ近づいてくる。" }
+      ],
+      "choices": [
+        { "text": "係員に、自分から事情を話す", "target": "s4_confess" },
+        { "text": "何も言わずに通ろうとする", "target": "s4_inspect" }
+      ]
+    },
+    {
+      "id": "s4_confess",
+      "chapter": "最終章　告白",
+      "background": "airport",
+      "stage": ["student"],
+      "lines": [
+        { "type": "say", "speaker": "yuto", "text": "あの…。このスーツケース、海外で知らない人から預かったものなんです。中に、何か隠されているかもしれません。" },
+        { "type": "say", "speaker": "customs", "text": "…わかりました。別室で詳しくお話を聞かせてください。" },
+        { "type": "narrate", "text": "スーツケースからは覚醒剤が見つかった。ユウトはすべてを正直に話し、捜査に協力した。" },
+        { "type": "say", "speaker": "police", "text": "自分から話してくれたことは大切です。ただ、運んでしまった責任がなくなるわけではありません。" }
+      ],
+      "ending": "s4Confessed"
+    },
+    {
+      "id": "s4_inspect",
+      "chapter": "最終章　代償",
+      "background": "airport",
+      "stage": ["student"],
+      "lines": [
+        { "type": "say", "speaker": "customs", "text": "こんにちは。スーツケースの中を確認させてください。" },
+        { "type": "say", "speaker": "yuto", "text": "と、友達へのお土産です…。" },
+        { "type": "narrate", "text": "X線検査の後、スーツケースの内張りから約2キロの覚醒剤が見つかった。ユウトはその場で逮捕された。" },
+        { "type": "say", "speaker": "yuto", "text": "中身は知らなかったんです！ 頼まれて運んだだけで…！" },
+        { "type": "say", "speaker": "police", "text": "覚醒剤を営利目的で輸入した場合、法定刑は「無期または3年以上の拘禁刑」です。" },
+        { "type": "say", "speaker": "police", "text": "高額な報酬や「開けるな」「お土産と言え」という指示があれば、「違法な物だと分かっていた」と判断されることが多いんです。" },
+        { "type": "say", "speaker": "yuto", "text": "…タダで旅行がしたかっただけなのに。" }
+      ],
+      "ending": "s4Arrested"
+    }
+  ]
+}
