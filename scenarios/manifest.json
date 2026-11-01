@@ -22,6 +22,12 @@
       "file": "hakobiya.json",
       "version": 1,
       "minAppVersion": "1.2"
+    },
+    {
+      "id": "okanekubari",
+      "file": "okanekubari.json",
+      "version": 1,
+      "minAppVersion": "1.2"
     }
   ]
 }
