@@ -28,6 +28,12 @@
       "file": "okanekubari.json",
       "version": 1,
       "minAppVersion": "1.2"
+    },
+    {
+      "id": "simSaihakko",
+      "file": "sim_saihakko.json",
+      "version": 1,
+      "minAppVersion": "1.2"
     }
   ]
 }

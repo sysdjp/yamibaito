@@ -1,0 +1,224 @@
+{
+  "formatVersion": 1,
+  "id": "simSaihakko",
+  "title": "シナリオ６　SIM再発行バイト",
+  "startNode": "s6_prologue",
+  "speakers": {
+    "yuto": { "name": "ユウト", "character": "student", "color": "#8CBFFF" },
+    "ken": { "name": "ケン＠スマホ案件", "character": "recruiter", "color": "#99E6B3" },
+    "shiji": { "name": "指示役", "character": "boss", "color": "#FF7366" },
+    "staff": { "name": "ショップ店員", "color": "#BFCCE6" },
+    "police": { "name": "警察官", "color": "#F2D966" }
+  },
+  "endings": [
+    {
+      "id": "s6Spotted",
+      "kind": "good",
+      "title": "スマホ1台の甘い話",
+      "summary": "「携帯ショップで手続きするだけで日給5万円」という投稿に応募しなかったユウト。手続きだけで大金がもらえる仕事など存在しない。",
+      "lessons": [
+        "「スマホの手続きだけ」「身分証はこちらで用意」は、なりすましの実行役を集める誘い文句",
+        "仕事内容に対して報酬が高すぎる求人は疑う",
+        "怪しい投稿は応募せず、SNSの通報機能で報告する"
+      ]
+    },
+    {
+      "id": "s6Refused",
+      "kind": "good",
+      "title": "他人にはなれない",
+      "summary": "「別人の名前で手続きをする」と知り、その場で断ったユウト。他人になりすます仕事は、どんな理由をつけられても犯罪だ。",
+      "lessons": [
+        "他人の名前で契約や手続きをする「代理」の仕事は、なりすましの犯罪",
+        "本人の代理なら委任状と本人の身分証が必要。自分の顔写真の入った他人名義の身分証など、本物ではありえない",
+        "自分の身分証や顔写真を、知らない相手に送らない"
+      ]
+    },
+    {
+      "id": "s6Consulted",
+      "kind": "good",
+      "title": "届いた偽物",
+      "summary": "自分の顔写真が貼られた他人名義のマイナンバーカードが届き、使う前に警察に相談したユウト。偽の身分証を使わずに済んだ。",
+      "lessons": [
+        "偽造された身分証は、使う前ならまだ引き返せる",
+        "届いた物はそのまま警察に持って行く",
+        "身分証を送ってしまっていても、警察はあなたと家族を守る"
+      ]
+    },
+    {
+      "id": "s6Confessed",
+      "kind": "warning",
+      "title": "カウンターでの告白",
+      "summary": "携帯ショップのカウンターで、自分から偽物の身分証だと打ち明けたユウト。それでも、偽造した身分証を使おうとした責任は残る。",
+      "lessons": [
+        "偽造した身分証を店で出した時点で、偽造公文書行使罪の**未遂**として処罰の対象になる",
+        "自分から打ち明けたことは考慮されるが、罪が消えるわけではない",
+        "いちばん大切なのは、最初から引き受けないこと"
+      ]
+    },
+    {
+      "id": "s6Arrested",
+      "kind": "bad",
+      "title": "乗っ取りの片棒",
+      "summary": "偽造マイナンバーカードで他人になりすまし、SIMカードの再発行を受けようとして現行犯逮捕されたユウト。その電話番号は、被害者の銀行口座を乗っ取るために使われる予定だった。",
+      "lessons": [
+        "**偽造したマイナンバーカードや運転免許証を使うと「偽造公文書行使罪」。法定刑は「1年以上10年以下の拘禁刑」**。未遂でも処罰される",
+        "他人になりすましてSIMカードを受け取れば、**詐欺罪（10年以下の拘禁刑）**にも問われる",
+        "乗っ取った電話番号は、被害者の銀行口座やスマホ決済の認証を突破し、預金を奪うために使われる",
+        "店のカメラに顔が残るのは実行役だけ。指示役は姿を消す"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "s6_prologue",
+      "chapter": "第1章　スマホ1台の仕事",
+      "background": "room",
+      "stage": [],
+      "phoneTitle": "タイムライン",
+      "lines": [
+        { "type": "narrate", "text": "大学2年の春。ユウトは引っ越し費用の支払いに困っていた。" },
+        { "type": "say", "speaker": "yuto", "text": "敷金と引っ越し代で20万円…。どうしよう。", "stage": ["student"] },
+        { "type": "narrate", "text": "SNSで「即日 高収入」と検索すると、こんな投稿が見つかった。" },
+        { "type": "post", "text": "【スマホ1台で日給5万円📱】\n携帯ショップで手続きをするだけ！\n身分証などの必要書類はこちらで用意します\n未経験OK・1時間で終わります⏰\nDMください👍" },
+        { "type": "say", "speaker": "yuto", "text": "携帯ショップで手続きするだけで5万円？ 1時間で？" }
+      ],
+      "choices": [
+        { "text": "DMを送ってみる", "target": "s6_dm" },
+        { "text": "手続きだけで5万円は怪しい。やめておこう", "target": "s6_refuse_early" }
+      ]
+    },
+    {
+      "id": "s6_refuse_early",
+      "chapter": "第1章　スマホ1台の仕事",
+      "background": "room",
+      "stage": ["student"],
+      "lines": [
+        { "type": "say", "speaker": "yuto", "text": "…待てよ。携帯の手続きなんて、普通は本人が自分でやるものだよな。" },
+        { "type": "say", "speaker": "yuto", "text": "「身分証はこちらで用意します」って、誰の身分証なんだ？" },
+        { "type": "narrate", "text": "ユウトは投稿を通報し、大学の奨学金窓口に相談することにした。" }
+      ],
+      "ending": "s6Spotted"
+    },
+    {
+      "id": "s6_dm",
+      "chapter": "第2章　代理の手続き",
+      "background": "phone",
+      "stage": [],
+      "phoneTitle": "DM：ケン＠スマホ案件",
+      "lines": [
+        { "type": "dmOut", "speaker": "yuto", "text": "投稿を見ました。どんな手続きですか？" },
+        { "type": "dmIn", "speaker": "ken", "text": "ありがとうございます！ 携帯ショップで、お客さんのSIMカードを再発行してもらうだけです📱" },
+        { "type": "dmIn", "speaker": "ken", "text": "身分証は、お客さんの名前とあなたの顔写真が入ったマイナンバーカードをこちらで作ります。顔写真と、保証のためにあなたの学生証の写真を送ってください" },
+        { "type": "say", "speaker": "yuto", "text": "他人の名前に、自分の顔写真…？" }
+      ],
+      "choices": [
+        { "text": "言われた通りに写真を送る", "target": "s6_photo" },
+        { "text": "なぜ本人が行かないのか聞く", "target": "s6_ask" }
+      ]
+    },
+    {
+      "id": "s6_ask",
+      "chapter": "第2章　代理の手続き",
+      "background": "phone",
+      "stage": [],
+      "phoneTitle": "DM：ケン＠スマホ案件",
+      "lines": [
+        { "type": "dmOut", "speaker": "yuto", "text": "どうしてお客さん本人が行かないんですか？" },
+        { "type": "dmIn", "speaker": "ken", "text": "本人が忙しくて行けないんです。了解はもらってるので、代理ってことで大丈夫ですよ👍" },
+        { "type": "dmIn", "speaker": "ken", "text": "店では、カードに書いてある名前と生年月日を名乗るだけ。簡単です！" },
+        { "type": "say", "speaker": "yuto", "text": "（代理なのに、本人のふりをする…？ 自分の顔が入った他人のマイナンバーカードなんて、偽物に決まってる）" }
+      ],
+      "choices": [
+        { "text": "「犯罪ですよね」と断ってブロックする", "target": "s6_quit" },
+        { "text": "…5万円のためだ。写真を送る", "target": "s6_photo" }
+      ]
+    },
+    {
+      "id": "s6_quit",
+      "chapter": "第2章　代理の手続き",
+      "background": "room",
+      "stage": ["student"],
+      "lines": [
+        { "type": "narrate", "text": "ユウトは「お断りします」と送り、アカウントをブロックした。" },
+        { "type": "say", "speaker": "yuto", "text": "他人になりすまして手続きするなんて、どう考えても犯罪だ。" },
+        { "type": "narrate", "text": "数日後、ニュースで「SIMカードを不正に再発行させ、電話番号を乗っ取って預金を奪う事件」が報じられていた。" }
+      ],
+      "ending": "s6Refused"
+    },
+    {
+      "id": "s6_photo",
+      "chapter": "第3章　届いたカード",
+      "background": "room",
+      "stage": ["student"],
+      "lines": [
+        { "type": "narrate", "text": "ユウトは顔写真と学生証の写真を送った。3日後、ポストに封筒が届いた。" },
+        { "type": "narrate", "text": "中には、ユウトの顔写真が入り、見知らぬ男性の名前と住所が書かれたマイナンバーカードが入っていた。" },
+        { "type": "say", "speaker": "yuto", "text": "本物そっくりだ…。でも、これって完全に偽物だよな…。" },
+        { "type": "say", "speaker": "shiji", "text": "届いたな。明日の昼、駅前の携帯ショップに行け。逃げたら、学生証の住所に人をやる。", "stage": ["student", "boss"] }
+      ],
+      "choices": [
+        { "text": "カードを持って警察に相談する", "target": "s6_police" },
+        { "text": "言われた通り、携帯ショップへ行く", "target": "s6_shop" }
+      ]
+    },
+    {
+      "id": "s6_police",
+      "chapter": "最終章　相談",
+      "background": "policeStation",
+      "stage": ["student"],
+      "lines": [
+        { "type": "narrate", "text": "ユウトは封筒ごとカードを持って、警察署に向かった。" },
+        { "type": "say", "speaker": "police", "text": "これは偽造されたマイナンバーカードですね。使う前に持ってきてくれて、本当によかった。" },
+        { "type": "say", "speaker": "police", "text": "このカードでSIMを再発行させれば、この男性の電話番号が乗っ取られ、銀行口座のお金を奪われていたはずです。" },
+        { "type": "say", "speaker": "yuto", "text": "学生証の写真も送ってしまっていて…。" },
+        { "type": "say", "speaker": "police", "text": "脅しについても、警察が対応します。あなたが話してくれたおかげで、名前を使われた男性も守ることができます。" }
+      ],
+      "ending": "s6Consulted"
+    },
+    {
+      "id": "s6_shop",
+      "chapter": "第4章　携帯ショップ",
+      "background": "station",
+      "stage": ["student"],
+      "lines": [
+        { "type": "narrate", "text": "翌日の昼。ユウトは駅前の携帯ショップのカウンターに座っていた。" },
+        { "type": "say", "speaker": "staff", "text": "SIMカードの再発行ですね。ご本人様確認のため、マイナンバーカードをお預かりします。" },
+        { "type": "say", "speaker": "staff", "text": "お名前と生年月日、ご住所をお願いします。" },
+        { "type": "narrate", "text": "ユウトは覚えさせられた他人の名前と生年月日を答えた。店員はカードを機械に置き、首をかしげた。" },
+        { "type": "say", "speaker": "staff", "text": "…ICチップの読み取りができませんね。少々お待ちいただけますか。" },
+        { "type": "say", "speaker": "yuto", "text": "（バレた…？ どうしよう…）" }
+      ],
+      "choices": [
+        { "text": "自分から正直に打ち明ける", "target": "s6_confess" },
+        { "text": "何事もない顔で待つ", "target": "s6_arrest" }
+      ]
+    },
+    {
+      "id": "s6_confess",
+      "chapter": "最終章　告白",
+      "background": "policeStation",
+      "stage": ["student"],
+      "lines": [
+        { "type": "say", "speaker": "yuto", "text": "あの…すみません。そのカード、偽物なんです。SNSのバイトで、頼まれて…。" },
+        { "type": "narrate", "text": "店員はすぐに警察に連絡した。ユウトは警察署ですべてを話した。" },
+        { "type": "say", "speaker": "police", "text": "自分から打ち明けたことは大切です。ただ、偽造した身分証を店で出した時点で、偽造公文書行使罪の未遂として処罰の対象になります。" },
+        { "type": "say", "speaker": "yuto", "text": "…はい。" }
+      ],
+      "ending": "s6Confessed"
+    },
+    {
+      "id": "s6_arrest",
+      "chapter": "最終章　代償",
+      "background": "policeStation",
+      "stage": ["student"],
+      "lines": [
+        { "type": "narrate", "text": "数分後、店に入ってきたのは警察官だった。ユウトはその場で逮捕された。" },
+        { "type": "say", "speaker": "police", "text": "偽造したマイナンバーカードを使って他人になりすました、偽造公文書行使の疑いです。法定刑は「1年以上10年以下の拘禁刑」。未遂でも処罰されます。" },
+        { "type": "say", "speaker": "police", "text": "再発行されたSIMは、この男性の電話番号を乗っ取り、銀行口座やスマホ決済の認証を突破するために使われる予定でした。" },
+        { "type": "say", "speaker": "yuto", "text": "手続きをするだけだって言われたんです…。" },
+        { "type": "narrate", "text": "店の防犯カメラには、ユウトの顔だけがはっきりと映っていた。「ケン」のアカウントは、すでに消えていた。" }
+      ],
+      "ending": "s6Arrested"
+    }
+  ]
+}
