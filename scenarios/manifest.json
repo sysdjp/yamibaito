@@ -34,6 +34,12 @@
       "file": "sim_saihakko.json",
       "version": 1,
       "minAppVersion": "1.2"
+    },
+    {
+      "id": "resortBaito",
+      "file": "resort_baito.json",
+      "version": 1,
+      "minAppVersion": "1.2"
     }
   ]
 }
