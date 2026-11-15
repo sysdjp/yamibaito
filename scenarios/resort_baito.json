@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "id": "resortBaito",
-  "title": "シナリオ７　リゾートバイト",
+  "title": "シナリオ７　海外リゾートバイト",
   "startNode": "s7_prologue",
   "speakers": {
     "yuto": { "name": "ユウト", "character": "student", "color": "#8CBFFF" },
