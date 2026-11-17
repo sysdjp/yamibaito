@@ -40,6 +40,24 @@
       "file": "resort_baito.json",
       "version": 2,
       "minAppVersion": "1.2"
+    },
+    {
+      "id": "taskSagi",
+      "file": "task_sagi.json",
+      "version": 1,
+      "minAppVersion": "1.2"
+    },
+    {
+      "id": "romanceSagi",
+      "file": "romance_sagi.json",
+      "version": 1,
+      "minAppVersion": "1.2"
+    },
+    {
+      "id": "supportSagi",
+      "file": "support_sagi.json",
+      "version": 1,
+      "minAppVersion": "1.2"
     }
   ]
 }
