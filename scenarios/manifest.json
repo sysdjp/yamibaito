@@ -42,6 +42,12 @@
       "minAppVersion": "1.2"
     },
     {
+      "id": "niukeDaiko",
+      "file": "niuke_daiko.json",
+      "version": 1,
+      "minAppVersion": "1.2"
+    },
+    {
       "id": "taskSagi",
       "file": "task_sagi.json",
       "version": 1,
